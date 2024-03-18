@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>被災地掲示板</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+        section {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.3s ease-in-out;
+        }
+        section:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            margin-top: 0;
+            color: #ff6600;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        a {
+            color: #ff6600;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #cc5200;
+        }
+        img {
+            display: block;
+            margin: auto;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        textarea {
+            width: 80%;
+            height: 100px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+        }
+        input[type="submit"] {
+            background-color: #ff6600;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #cc5200;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>被災地掲示板</h1>
+    </header>
+    <section id="content">
+        <h2>震災の説明</h2>
+        <p>2030年8月16日に起きた地震について分かっていること、現状</p>
+    </section>
+    <section>
+        <h2>リンク</h2>
+        <p><a onclick="toggleSection('missing_persons')">行方不明者の情報</a></p>
+        <p><a onclick="toggleSection('shortage_supplies')">不足した物資の報告</a></p>
+        <p><a onclick="toggleSection('shelters')">避難所の情報</a></p>
+        <p><a onclick="toggleSection('after_disaster')">被災後の取るべき行動</a></p>
+    </section>
+
+    <script>
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            section.classList.toggle("active"); // .activeクラスをトグル
+        }
+    </script>
+
+    <section id="missing_persons" class="active"> <!-- 最初から表示 -->
+        <h2>行方不明者の情報</h2>
+        <p>ご家族、ご友人など行方不明になった方がいる場合こちらのフォームに情報を記入してください</p>
+        <img src="\\K1ADSDFLSV\Redirect$\HS\2022\221007\Downloads\Image.jpg" alt="行方不明者の画像">
+        <p>行方不明者の名前、年齢、外見の特徴など</p>
+        <form>
+            <textarea placeholder="行方不明者の情報を報告してください。"></textarea><br>
+            <input type="submit" value="報告する">
+        </form>
+    </section>
+
+    <section id="shortage_supplies">
+        <h2>不足した物資の報告</h2>
+        <p>避難している場所で不足している物質の報告</p>
+        <img src="https://via.placeholder.com/400" alt="物資の画像">
+        <p>不足している物資の種類と量、必要な場所や連絡先など</p>
+        <form>
+            <textarea placeholder="不足している物資の報告をしてください。"></textarea><br>
+            <input type="submit" value="報告する">
+        </form>
+    </section>
+
+    <section id="shelters">
+        <h2>避難所の情報</h2>
+        <p>被災者が安全な場所に避難できる場所の情報を共有してください</p>
+        <img src="https://via.placeholder.com/400" alt="避難所の画像">
+        <p>避難所の名前、場所、連絡先、提供されているサービスなど</p>
+        <form>
+            <textarea placeholder="避難所の情報を報告してください。"></textarea><br>
+            <input type="submit" value="報告する">
+        </form>
+    </section>
+
+    <section id="after_disaster">
+        <h2>被災後の取るべき行動</h2>
+        <p>震災後に必要な行動がまとめられているサイト1<https://gooddo.jp/magazine/climate-change/earthquake/2918/>
